@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Data Mining</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              <br>
+              Kelompok 4
+            </span>
+          </a>
+
+          <div id="myNav" class="overlay">
+            <div class="overlay-content">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="car.html">Cars</a>
+              <a href="blog.html">Blog</a>
+              <a href="#">Login</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="slider_container">
+        <div class="img-box">
+          <img src="{{ url_for('static', filename='images/hero-img.jpg') }}" alt="">
+        </div>
+        <div class="detail_container">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="detail-box">
+                  <h1>
+                    Prediksi<br>
+                    Service<br>
+                    Kendaraan
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+  <!-- book section -->
+  <section class="book_section">
+    <div class="form_container">
+      <form action="{{ url_for('predict') }}" method="POST">
+        <div class="form-row">
+          <div class="col-lg-8">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="parkingName">Model Mobil</label>
+                <input type="text" class="form-control" placeholder="" name="Model" required>
+              </div>
+              <div class="col-md-6">
+                <label for="parkingNumber">Tahun Kendaraan</label>
+                <input type="text" class="form-control" placeholder="" name="TahunKendaraan" required>
+              </div>
+              <div class="col-md-6">
+                <label for="parkingNumber">Kota</label>
+                <input type="text" class="form-control" placeholder="" name="Kota" required>
+              </div>
+              <div class="col-md-6">
+                <label for="parkingNumber">Job Desc</label>
+                <input type="text" class="form-control" placeholder="" name="tes" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="btn-container">
+              <button type="submit" class="">
+                Search
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="parkingNumber">Service</label>
+            <input type="text" class="form-control" placeholder="{{ Job_Desc }}" name="Job_Desc" disabled>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="img-box">
+      <img src="{{ url_for('static', filename='images/book-car.png') }}" alt="">
+    </div>
+  </section>
+
+  <!-- end book section -->
+
+  <!-- car section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7 px-0">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/about-img.png') }}" alt="">
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <div class="detail-box">
+            <h2>
+              Tentang Website
+            </h2>
+            <p>
+              Prediksi Service berskala berdasarkan jenis kendaraan dan jarak tempuh kendaraan yang sering dilakukan pada PT Wijaya Toyota Dago
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="car_section layout_padding2-top layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Biodata Kelompok 4
+        </h2>
+        <p></p>
+        <br>
+      </div>
+      <div class="car_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/sarul.png') }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Syahrul Choliq Mawardi
+            </h5>
+            <p>
+              NIM : 10521053
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/Aloysius.png') }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Aloysius A E Woda
+            </h5>
+            <p>
+              NIM : 10521064
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/bilal.png') }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              M Bilal Alamsyach
+            </h5>
+            <p>
+              NIM : 10521057
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/raka.png') }}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Rakha Maheswara Suwardi
+            </h5>
+            <p>
+              NIM : 10521065
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end car section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2024 All Rights Reserved. Design by Kelompok 4</a>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+,Classifier,Accuracy
+0,Naive Bayes,0.5433496269616671
+1,K-Nearest Neighbors,0.5446359660406483
+2,Random Forest,0.31926935940313866
+3,Decision Tree,0.5996912786210445
+4,MLP Classifier,0.6057799502615556
+5,Support Vector Machine,0.5976331360946746

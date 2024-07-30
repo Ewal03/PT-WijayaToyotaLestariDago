@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Data Mining</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              <br>
+              Kelompok 4
+            </span>
+          </a>
+
+          <!-- <div class="navbar-collapse" id="">
+            <div class="user_option">
+              <a href="">
+                Login
+              </a>
+            </div>
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div> -->
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="car.html">Cars</a>
+                <a href="blog.html">Blog</a>
+                <!-- <a href="contact.html">Contact Us</a> -->
+                <a href="#">Login</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="slider_container">
+        <div class="img-box">
+          <img src="images/hero-img.jpg" alt="">
+        </div>
+        <div class="detail_container">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="detail-box">
+                  <h1>
+                    Prediksi<br>
+                    Service<br>
+                    Kendaraan
+                  </h1>
+                  <!-- <a href="contact.html">
+                    Contact Us
+                  </a> -->
+                </div>
+              </div>
+              <!-- <div class="carousel-item">
+                <div class="detail-box">
+                  <h1>
+                    Rent Car <br>
+                    Experts <br>
+                    Service
+                  </h1>
+                  <a href="">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="detail-box">
+                  <h1>
+                    Rent Car <br>
+                    Experts <br>
+                    Service
+                  </h1>
+                  <a href="">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="sr-only">Next</span>
+            </a>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+  <!-- book section -->
+  <section class="book_section">
+    <div class="form_container">
+      <form action="{{ url_for('predict') }}">
+        <div class="form-row">
+          <div class="col-lg-8">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="parkingName">Model Mobil</label>
+                <input type="text" class="form-control" placeholder="" name="Model">
+              </div>
+              <div class="col-md-6">
+                <label for="parkingNumber">Tahun Kendaraan</label>
+                <input type="text" class="form-control" placeholder="" name="TahunKendaraan">
+              </div>
+              <div class="col-md-6">
+                <label for="parkingNumber">Kota</label>
+                <input type="text" class="form-control" placeholder=""name="Kota">
+              </div>
+              <div class="col-md-6">
+                <label for="parkingNumber">Service : {{ insurance_cost }}</label>
+                <input type="text" class="form-control" placeholder=""name="Job_Desc" disabled>
+              </div>
+            </div>
+            <!-- <div class="form-row">
+              <div class="col-md-6">
+                <label for="parkingName">Pick Up Date</label>
+                <input type="text" class="form-control" placeholder="07/09/2020">
+              </div>
+              <div class="col-md-6">
+                <label for="parkingNumber">Return Date</label>
+                <input type="text" class="form-control" placeholder="07/09/2020">
+              </div>
+            </div> -->
+          </div>
+          <div class="col-lg-4">
+            <div class="btn-container">
+              <button type="submit" class="">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="img-box">
+      <img src="images/book-car.png" alt="">
+    </div>
+  </section>
+
+  <!-- end book section -->
+
+  <!-- car section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7 px-0">
+          <div class="img-box">
+            <img src="images/about-img.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <div class="detail-box">
+            <h2>
+              Tentang Website
+            </h2>
+            <p>
+              Prediksi Service berskala berdasarkana jenis kendaraan dan jarak tempuh kendaraan yang sering dilakukan pada PT Wijaya Toyota Dago
+            </p>
+            <!-- <a href="">
+              Read More
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="car_section layout_padding2-top layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Biodata Kelompok 4
+        </h2>
+        <p>
+         
+        </p>
+        <br>
+      </div>
+      <div class="car_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/c-1.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Syahrul Choliq Mawardi
+            </h5>
+            <p>
+              NIM : 10521053
+            </p>
+            <!-- <a href="">
+              Read More
+            </a> -->
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/c-2.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Aloysius A E Woda
+            </h5>
+            <p>
+              NIM : 10521064
+            </p>
+            <!-- <a href="">
+              Read More
+            </a> -->
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/c-3.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              M Bilal Alamsyach
+            </h5>
+            <p>
+              NIM : 10521057
+            </p>
+            <!-- <a href="">
+              Read More
+            </a> -->
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/c-3.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Rakha Maheswara Suwardi
+            </h5>
+            <p>
+              NIM : 10521065
+            </p>
+            <!-- <a href="">
+              Read More
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end car section -->
+
+  <!-- about section -->
+
+  
+
+  <!-- end about section -->
+
+
+  <!-- best section -->
+
+  <!-- <section class="best_section">
+    <div class="container">
+      <div class="book_now">
+        <div class="detail-box">
+          <h2>
+            Our Best Cars
+          </h2>
+          <p>
+            It is a long established fact that a reader will be distracted by the
+          </p>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- end best section -->
+
+  <!-- rent section -->
+
+  <!-- <section class="rent_section layout_padding">
+    <div class="container">
+      <div class="rent_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/r-1.png" alt="">
+          </div>
+          <div class="price">
+            <a href="">
+              Rent $200
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/r-2.png" alt="">
+          </div>
+          <div class="price">
+            <a href="">
+              Rent $200
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/r-3.png" alt="">
+          </div>
+          <div class="price">
+            <a href="">
+              Rent $200
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/r-4.png" alt="">
+          </div>
+          <div class="price">
+            <a href="">
+              Rent $200
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/r-5.png" alt="">
+          </div>
+          <div class="price">
+            <a href="">
+              Rent $200
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/r-6.png" alt="">
+          </div>
+          <div class="price">
+            <a href="">
+              Rent $200
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          See More
+        </a>
+      </div>
+    </div>
+  </section> -->
+
+
+  <!-- end rent section -->
+
+  <!-- blog section -->
+
+
+  <!-- end map section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2020 All Rights Reserved. Design by
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>
